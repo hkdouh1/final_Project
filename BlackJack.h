@@ -3,15 +3,18 @@
 #include "player.h"
 #include "deck.h"
 using namespace std;
-class BlackJack {
+class BlackJack 
+{// managing the game logic
 
 private:
-	Deck deck;
+	Deck deck; //Deck Object and reference to player and dealer
 	Player &player;
 	Player &dealer;
 
 public:
-	BlackJack(Player& dealer, Player& player);
+	BlackJack(Player& dealer, Player& player); // initilizes the game to the player and dealer
+
+	// constructors 
 	void playerHand() const;
 //Day 8
 	void playerTurn();
