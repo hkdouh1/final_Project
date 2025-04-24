@@ -5,21 +5,22 @@
 #include <string>
 #include "cards.h"
 using namespace std;
-
+// represents the player and dealer.
+//
 class Player 
 {
 private:
-	vector<Card> hand;
+	vector<Card> hand; // vector of card object for the players hand
 	int value;
 	int balance;
 
 
 public:
 	Player(int straightBalance = 100);
-	void addCard(const Card& card);
+	void addCard(const Card& card); // adding card if needed
 	void clearHand(); // missed this when being used in BlackJackSim.cpp, needed to define it in player.h 
-	int getHandValue() const;
-	string showHand() const;
+	int getHandValue() const;// getting value of hand
+	string showHand() const;// showing player hand
 	int getBalance() const;
 	void updateBalance(int amount);
 	bool isLose() const;
