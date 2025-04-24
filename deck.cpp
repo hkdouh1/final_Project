@@ -4,7 +4,9 @@
 #include <ctime>
 using namespace std;
 
-Deck::Deck()
+
+
+Deck::Deck()//initialized for 6 shuffled decks
 {
    string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades" };
    string ranks[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
@@ -23,14 +25,14 @@ Deck::Deck()
    shuffle();
 }
 
-void Deck::shuffle()
+void Deck::shuffle() // shuffle deck
 {
    random_device rd;
    mt19937 g(rd());
    std::shuffle(cards.begin(), cards.end(), g); // Fix: Use std::shuffle instead of shuffle
 }
 
-Card Deck::dealCard()
+Card Deck::dealCard()//removes and returns top card
 {
 	if (needsReshuffle())
 	{
