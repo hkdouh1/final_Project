@@ -70,10 +70,6 @@ void BlackJack::dealFirstCards() {
 	player.addCard(deck.dealCard());
 	reshuffle();
 
-	//if (deck.needsReshuffle()) {
-		//cout << "\nCurrently reshuffling..." << endl;
-		//deck.shuffle();
-	//}
 }
 
 void BlackJack::reshuffle() {
@@ -132,7 +128,7 @@ void BlackJack::adjust(int outcome) {
 	//else draw (outcome = 0) nothing changes
 }
 
-void BlackJack::whoWon() {
+void BlackJack::whoWon() {// compare whowon to adjuct to get the balance
 	int pTotal = player.getHandValue();
 	int dTotal = dealer.getHandValue();
 
@@ -140,21 +136,23 @@ void BlackJack::whoWon() {
 
 	playerHand();
 	dealerHand(true);
-	if (player.isLose()) {
-		cout << "You Busted, Dealer Wins" << endl;
-		adjust(-1);
+	if (player.isLose()) 
+	{
+		cout << "You Lose, Dealer Wins" << endl;
+		adjust(-1); // you lost
 	}
-	else if (dealer.isLose()) {
-		cout << "Dealer Busted, You Win!" << endl;
-		adjust(1);
+	else if (dealer.isLose()) 
+	{
+		cout << "Dealer Lost, You Win!" << endl;
+		adjust(1);// you won
 	}
 	else if (pTotal > dTotal) {
 		cout << "You Win!" << endl;
-		adjust(1);
+		adjust(1);// round win
 	}
 	else if (pTotal < dTotal) {
 		cout << "Dealer Wins!" << endl;
-		adjust(-1);
+		adjust(-1);// round lost
 	}
 	else {
 		cout << "DRAW!!!" << endl;
