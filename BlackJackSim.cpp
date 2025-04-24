@@ -6,7 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 
-
+// runs 100k rounds and displays it
 void BlackJackSim::simulator(int rounds) {
 	srand(static_cast<unsigned int>(time(0)));
 
