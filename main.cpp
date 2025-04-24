@@ -3,40 +3,13 @@
 #include "deck.h"
 #include "cards.h"
 #include "BlackJack.h"
+#include "BlackJackSim.h"
 using namespace std;
 
-
+// entry point to the game
 int main() {
-	//player test
-	/*Deck deck;
-	Player player(100);
-
-	player.addCard(deck.dealCard());
-	player.addCard(deck.dealCard());
-
-	cout << "Hand of Player: " << endl;
-	cout << player.showHand();
-
-	cout << "Value of Players Hand: " << player.getHandValue() << endl;
-
-	cout << (player.isLose() ? "You lose the hand\n" : "You are still in \n");*/
-
-	/*blackjack test - part 1
-	Player player(100);
-	Player dealer(0);
-	BlackJack testGame(dealer, player);
-
-	cout << "BLACK JACK" << endl;
-
-	testGame.reset();
-	testGame.dealCards();
-
-	testGame.playerHand();
-	testGame.dealerHand(false);
-
-	testGame.playerTurn();*/
-	//test day 9
-	Player player(100);
+	
+	/*Player player(100);
 	Player dealer(0);
 
 	BlackJack testGame(dealer, player);
@@ -50,6 +23,9 @@ int main() {
 
 	} while (testGame.anotherRound());
 
-	cout << "Thank you for playing. Youur final balance is: $" << player.getBalance() << endl;
+	cout << "Thank you for playing. Youur final balance is: $" << player.getBalance() << endl;*/
+	BlackJackSim simulator;
+	simulator.simulator(100000); // Simulate 100,000 hands
+	simulator.display(); // Display the results
 	return 0;
 }
