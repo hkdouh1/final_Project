@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-class Card
+class Card //represents the cards suit and ranks
 {
 private:
 	string suit;
@@ -13,7 +13,7 @@ private:
 public:
 	Card(string suit, string rank);
 	
-	int getValue() const;
-	string toString() const;
+	int getValue() const; // getting value of card
+	string toString() const; // returns readable string representaion 
 };
 #endif
