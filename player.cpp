@@ -2,6 +2,9 @@
 #include <sstream>
 using namespace std;
 
+// implementing in player.h
+//adds cards to player hand and gets the value
+
 Player::Player(int startingBalance) : value(0), balance(startingBalance) {}
 
 void Player::addCard(const Card& card)
